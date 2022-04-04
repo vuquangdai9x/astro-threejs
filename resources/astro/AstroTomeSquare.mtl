@@ -1,0 +1,254 @@
+# Blender MTL File: 'None'
+# Material Count: 22
+
+newmtl _05___Default
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.813782 0.769205 0.693804
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl _13___Default
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.213984 0.213984 0.213984
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\times_d.jpeg
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\times_d.jpeg
+
+newmtl _14___Default
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 1.135301 1.135301 1.135301
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-5.png
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-5.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-5.png
+
+newmtl _19___Default
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 1.000000 1.000000 1.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\times_d.jpeg
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\times_d.jpeg
+
+newmtl _20___Default
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 1.135301 1.135301 1.135301
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-5.png
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-5.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-5.png
+
+newmtl advertising_screens_texture_01
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.915094 0.915094 0.915094
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-2.png
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-2.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-2.png
+
+newmtl advertising_screens_texture_02
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.988337 0.988337 0.988337
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-1.png
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-1.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-1.png
+
+newmtl chrom
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.582088 0.615762 0.671036
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl glass_01_lit
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.325076 0.345869 0.432587
+Ks 0.500000 0.500000 0.500000
+Ke 0.150943 0.150943 0.150943
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl glass_02
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.218649 0.218649 0.218649
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl interior_texture
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 8.474190 8.474190 8.474190
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\interior_texture.jpg
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\interior_texture.jpg
+
+newmtl landscape_01
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.556604 0.556604 0.556604
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\landscape_texture.jpg
+
+newmtl metal_black
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.084945 0.084945 0.110702
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl metal_gray
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.377508 0.406200 0.452340
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl red_neon
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.768628 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl skyscraper_texture
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.179245 0.179245 0.179245
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\skyscraper_texture.jpg
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\skyscraper_texture.jpg
+
+newmtl skyscraper_wall_texture
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\skyscraper_wall_texture.jpg
+
+newmtl street_level_texture_01
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 1.498039 1.498039 1.498039
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-3.png
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-3.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-3.png
+
+newmtl street_level_texture_02
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 1.200494 1.200494 1.200494
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-4.png
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-4.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\NewTexture\\bill-board-TS-4.png
+
+newmtl tall_screen_1
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.886792 0.886792 0.886792
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\d85243713e8bf1d5a89a.jpg
+map_Ke E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\d85243713e8bf1d5a89a.jpg
+
+newmtl trees
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\SampleLeaves-alpha.png
+map_d E:\\Unity\\Projects\\Astro3D\\Assets\\_GameTrailer\\Models\\NewYork\\New_York_Times_Square_fbx\\SampleLeaves-alpha.png
+
+newmtl yellow_neon
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.940805 1.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 1.000000 0.752941 0.000000
+Ni 1.450000
+d 1.000000
+illum 2

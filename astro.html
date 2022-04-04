@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Astro Time Square</title>
+
+<!-- 	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script> 
+	<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>  -->
+	
+	<script src="js/aframe.min.js"></script>
+	<script src="js/aframe-extras.min.js"></script>
+	<script src="js/aframe-event-set-component.min.js"></script>
+
+	<script src="https://kit.fontawesome.com/d800649acc.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/general.css">
+	<link rel="stylesheet" href="css/user-layout.css">
+	
+	<script type="text/javascript" defer src="js/scenario-manager/ultility-functions.js"></script>
+	<script type="text/javascript" defer src="js/scenario-manager/DataManager.js"></script>
+	<script type="text/javascript" defer src="js/scenario-manager/SceneManager.js"></script>
+	<script type="text/javascript" defer src="js/scenario-manager/UIManager.js"></script>
+
+	<script type="module" src="js/my-aframe-components.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	</script>
+	<header hidden=""></header>
+	<aside id="config-section">
+		<h1 id="scene-name">Phòng khách</h1>
+		<hr>
+		<div id="config-light-group">
+			<div id="config-light-group-title">
+				<h2>Đèn</h2>
+				<div>
+					<button class="lightbulb-on" onclick="UIManager.setStatusAllLight(true)"><i class="fas fa-lightbulb"></i></button>
+					<button class="lightbulb-off" onclick="UIManager.setStatusAllLight(false)"><i class="fas fa-lightbulb"></i></button>
+					<button onclick="UIManager.resetAllLight()"><i class="fas fa-redo"></i></button>
+				</div>
+			</div>
+			<div id="list-light-group">
+				<button hidden=""><i class="fas fa-chevron-left"></i></button>
+				<div></div>
+				<button hidden=""><i class="fas fa-chevron-right"></i></button>
+			</div>
+			<div id="light-group-info">
+				<h3>Tên đèn</h3>
+				<div>
+					<button class="lightbulb-off" onclick="UIManager.toggleLightStatus()"><i class="fas fa-lightbulb"></i></button>
+					<button onclick="UIManager.resetLight()"><i class="fas fa-redo"></i></button>
+				</div>
+			</div>
+			<p hidden="" id="light-group-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolore temporibus error sequi eius voluptas omnis qui quisquam! Et recusandae nihil est amet nemo ad beatae commodi rerum earum, eos.</p>
+			<div id="config-light-power">
+				<h3>Công suất:</h3>
+				<p>75%</p>
+				<input type="range" min="0.0" max="1.0" step="0.01" onchange="UIManager.setLightPower(this.value)" oninput="UIManager.setLightPower(this.value)">
+			</div>
+			<div id="config-light-color">
+				<div id="config-light-color-title">
+					<h3>Màu sắc:</h3>
+					<div id="light-color-preview" style="background-color: #ffffff"></div>
+				</div>
+				<div id="config-light-temperature">
+					<input type="range" step="1" onchange="UIManager.setLightTemperature(this.value)" oninput="UIManager.setLightTemperature(this.value)">
+				</div>
+				<div id="config-light-color-rgb">
+					<label>
+						<input type="color" name="input-color" hidden="" oninput="UIManager.setLightColorRGB(this.value)">
+						<i class="fas fa-palette"></i>
+					</label>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="config-scenario">
+			<h2>Kịch bản</h2>
+			<div id="list-scenario"></div>
+			<h3>Tiếp khách</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint perferendis veniam molestias labore nostrum, beatae quia.</p>
+		</div>
+		<hr>
+		<div id="config-time">
+			<h2>Thời gian</h2>
+			<div id="list-time-items">
+				<button onclick="UIManager.setTime(7500)">Sáng</button>
+				<button onclick="UIManager.setTime(12000)">Trưa</button>
+				<button onclick="UIManager.setTime(15000)">Chiều</button>
+				<button onclick="UIManager.setTime(20000)">Tối</button>
+			</div>
+			<div id="input-time">
+				<input type="time" name="time-info" class="custom-button" onchange="UIManager.setTime(this.value)">
+				<button onclick="UIManager.setCurrentTime()">Thời điểm hiện tại</button>
+			</div>
+			<div id="input-time-slider">
+				<input type="range" name="time-info-range"  min="1" max="23999" step="1" class="custom-button" onchange="UIManager.setTime(this.value)" oninput="UIManager.setTime(this.value)">
+			</div>
+			<p id="time-description"></p>
+		</div>
+	</aside>
+	<div id="debug" hidden="true"></div>
+	<main id="main-section">
+		<section id="scene-section">
+			<a-scene scene_init embedded shadow="type: pcfsoft; autoUpdate: false;">
+				<a-assets>
+					<a-asset-item id="roomBox" src="resources/astro/AstroTimeSquare.gltf" update-shadowmap-when-loaded></a-asset-item>
+				</a-assets>
+
+				<a-sky id="sky" color="#0a0912"></a-sky>
+				<a-entity id="rig" movement-controls="constrainToNavMesh: true; speed: 0.2">
+					<a-entity camera position="3 1.2 5" look-controls="pointerLockEnabled: true">
+						<a-cursor position="0 0 -0.1" scale="0.1 0.1 0.1" raycaster="objects: .gaze-listener"></a-cursor>
+						<!-- <a-entity position="-0.2 -0.2 -0.2" laser-controls="hand: left" raycaster="objects: .laser-listener; showLine: true; far: 2" line="color: red; opacity: 0.75" ex-keyboard-controls="enabled: false"></a-entity> -->
+					</a-entity>
+					<!-- <a-entity hand-controls="hand: left" ex-keyboard-controls="enabled: false" control-laser-by-keyboard></a-entity> -->
+				</a-entity>
+				<!-- <a-sphere id="raycast-intersection-point" radius="0.1"></a-sphere> -->
+
+				<!-- room wall -->
+				<a-entity gltf-model="#roomBox" position="0 0 0" shadow update-shadowmap-when-loaded></a-entity>
+				<a-entity geometry="depth: 4.8; height: 2.5; width: 0.025" material="opacity: 0.3; transparent: true" position="-3.93082 1.663 -3.53577" id="test-obj-animate"></a-entity>
+
+				<a-entity geometry="depth: 0.025; height: 2.5; width: 5.4" material="opacity: 0.3; transparent: true" position="-1.17275 1.653 -5.95516"></a-entity>
+
+				<!-- light -->
+				<a-entity id="ambientLight" light="type: ambient; color: #BBB; intensity: 0.4;"></a-entity>
+				<a-entity id="sunLight" light="type: directional; castShadow: true; shadowBias: -0.001; shadowCameraFar: 100; shadowRadius: 1; shadowCameraTop: 10; shadowCameraRight: 10; shadowCameraBottom: -10; shadowCameraLeft: -10; color: #e5935d;" position="-8 2.15 -4" rotation="0 0 0" target="#directionaltarget" update-shadowmap-on-change-prop update-shadowmap-when-loaded light-temperature="temperature:2500;"></a-entity>
+				<a-entity id="directionaltarget" position="0 0 0" visible="false"></a-entity>
+
+				<!-- <a-entity id="flatCeilLEDObj" geometry="depth: 1.2; height: 0.04; width: 0.4" material="color: #d6d6d6; emissiveIntensity: 0; emissive: #ffffff" position="0 2.88341 -1.2752" click-to-toggle-light="lightOn: false; targetLight: .flatCeilLED" class="gaze-listener" emissive-temperature="temperature:3200;"></a-entity> -->
+				<a-entity id="flatCeilLEDObj" geometry="depth: 1.2; height: 0.04; width: 0.4" material="color: #d6d6d6; emissiveIntensity: 0; emissive: #ffffff" position="0 2.88341 -1.2752" class="gaze-listener" emissive-temperature="temperature:3200;" shadow="cast:false"></a-entity>
+
+				<a-entity id="flat-ceil-led-direct" light="intensity: 0.5; type: point" position="0 2.65785 -1.2752" light-temperature="temperature:3200;"></a-entity>
+				<a-entity id="flat-ceil-led-reflect" light="intensity: 0.5; type: point" position="0 0.3 -1.2752" light-temperature="temperature:3200;"></a-entity>
+
+				<a-entity id="light-at-door" light="intensity: 0.2; type: point" position="2.6238 2 7.29303" light-temperature="temperature:6000;"></a-entity>
+				<a-entity id="light-at-window-1" light="intensity: 0.2; type: point" position="-1.13582 1.55856 -6.13295" light-temperature="temperature:6000;" visible="false"></a-entity>
+				<a-entity id="light-at-window-2" light="intensity: 0.2; type: point" position="-4.10124 1.651 -3.40811" light-temperature="temperature:6000;" visible="false"></a-entity>
+			</a-scene>
+		</section>
+	</main>
+	<footer hidden=""></footer>
+
+	<span hidden id="scenario-file" data-light-definition="data/light-definition-living_room.json" data-scenario="data/scenario-livingroom.json" data-timeline="data/timeline-living_room.json"></span>
+
+	<script type="text/javascript">
+		function onloadedScenarioData(data){
+			SceneManager.queryEntitiesInScene(document.querySelector('a-scene'));
+			UIManager.initUI();
+			console.log(ScenarioData);
+			console.log(UIManager);
+			console.log(SceneManager.entities);
+		}
+
+		function onerrorScenarioData(){
+			console.error("Can\'t load scenario data files");
+		}
+
+		window.onload = (event) => {
+			let dataEl = document.querySelector('#scenario-file');
+			// loadScenarioData(sceneEl, dataEl, onloadedScenarioData);
+			DataManager.loadDataFiles(dataEl, onloadedScenarioData, onerrorScenarioData);
+		};
+
+		document.addEventListener('keyup', function(event){
+			let key = event.which || event.keyCode;
+			if (key == 80){ // press P to toggle debug window
+				UIManager.toggleDebug();
+			}
+		});
+		
+	</script>
+</body>
+</html>

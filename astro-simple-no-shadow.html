@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test Model Loading</title>
+	<script src="js/aframe.min.js"></script>
+	<script src="js/aframe-extras.min.js"></script>
+	<script src="js/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		AFRAME.registerComponent('scene_generate', {
+			schema: {
+				col: {type: 'int', default: 5},
+				row: {type: 'int', default: 5},
+				objectDensity: {type: 'number', default: 0.99},
+				boxSize: {type: 'number', default: 1},
+				padding: {type: 'number', default: 3},
+				minHeight: {type: 'number', default: 1},
+				maxHeight: {type: 'number', default: 30},
+				skyColor: {type: 'color', default: "#f1f1e8"},
+				fogColor: {type: 'color', default: "#f1f1e8"},
+				fogDensity: {type: 'number', default: 0.1},
+				planeColor: {type: 'color', default: "#bfdcae"},
+				boxColor: {type: 'color', default: "#81b214"},
+			},
+
+			init: function () {
+				
+			},
+
+			// update: function () {
+			// 	// Do something when component's data is updated.
+			// },
+
+			// remove: function () {
+			// 	// Do something the component or its entity is detached.
+			// },
+
+			// tick: function (time, timeDelta) {
+			// 	// Do something on every scene tick or frame.
+			// }
+		});
+
+	</script>
+	<!-- <a-scene fog="type: exponential" scene_generate stats> -->
+	<a-scene 
+		renderer="logarithmicDepthBuffer: true;" fog="type: exponential" scene_generate>
+		<!-- <a-assets>
+			<a-asset-item id="roomModel" src="./resources/astro/AstroTimeSquare.gltf"></a-asset-item>
+		</a-assets>
+		<a-entity gltf-model="#roomModel"></a-entity> -->
+		<a-gltf-model src="./resources/astro/AstroTimeSquare.gltf"></a-gltf-model>
+		<a-sky id="sky" color="#0a0912"></a-sky>
+		<a-entity light="type: ambient; color: #DDD"></a-entity>
+		<a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+		<a-entity id="rig" movement-controls="constrainToNavMesh: false; speed: 1">
+			<a-entity camera far="700" near="1"  position="3 3 5" look-controls="pointerLockEnabled: true">
+				<a-cursor position="0 0 -0.1" scale="0.1 0.1 0.1" raycaster="objects: .gaze-listener"></a-cursor>
+				<!-- <a-entity position="-0.2 -0.2 -0.2" laser-controls="hand: left" raycaster="objects: .laser-listener; showLine: true; far: 2" line="color: red; opacity: 0.75" ex-keyboard-controls="enabled: false"></a-entity> -->
+			</a-entity>
+			<!-- <a-entity hand-controls="hand: left" ex-keyboard-controls="enabled: false" control-laser-by-keyboard></a-entity> -->
+		</a-entity>
+	</a-scene>
+</body>
+</html>

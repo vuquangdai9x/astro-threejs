@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test Model Loading</title>
+	<script src="js/aframe.js"></script>
+	<script src="js/aframe-extras.min.js"></script>
+	<script src="js/aframe-event-set-component.min.js"></script>
+	<script src="js/aframe-effects.min.js"></script>
+</head>
+<body>
+	<script type="script-effect" id="customFilter" data-defaults="tDiffuse 0.3 0.3 1." data-diffuse>
+    void $main(inout vec4 c, vec4 o, vec2 uv, float d){
+        float t = time * mix(1., 1000., abs(sin(time * 10. + uv.x)));
+        uv = vec2(uv.x + resolution.z * sin(t * c.r + c.b), uv.y - resolution.w * cos(t * c.b + c.r));
+        c.rgb += smoothstep(0.3, 0.9, texture2D($0,uv).rgb  ) * mix( $1, $2, abs(sin(time * $3))) ;
+    }
+	</script>
+
+	<script type="script-effect" id="blendOutline" data-diffuse>
+	    void $main(inout vec4 c, vec4 o, vec2 uv, float d){
+	        c.rgb = mix(c.rgb, o.rgb, smoothstep(0.1,0.3,o.a));
+	    }
+	</script>
+
+	<script type="script-effect" id="add" data-defaults="bloom_texture bloom_intensity" data-diffuse>
+	    void $main(inout vec4 c, vec4 o, vec2 uv, float d){
+	        c.rgb += pow(texture2D($0, uv).rgb,vec3(2.)) * $1;
+	    }
+	</script>
+
+	<!-- <a-scene fog="type: exponential" scene_generate stats> -->
+	<!-- <a-scene 
+		fog="type: exponential" 
+		scene_generate shadow="type: pcfsoft; autoUpdate: false;"
+	    antialias="false"
+	    effects=" colors, outline.sobel?, #blendOutline, bloom, film,  godrays, glitch,  fxaa"
+	    film="sIntensity: 0.03; nIntensity: 0.2" 
+	    outline="enabled: false; width: 1.33 1.33; range: 0 10; strength: 3; smooth: true;" 
+	    colors="mode:hqprtom; mul: 0.66 0.5 0.66; pow: 1 1.33 1.66; quant: 0.3 0.3 0.1; orig: 0.33 0.66 0.66"
+	    bloom="filter: bloom!, bloom.filter, #customFilter(bloom_texture 0.3 0.6 0.5); strength: 0.5; radius:1.2"
+	    fxaa="true"
+	    godrays="src: #sun; threshold: 0. 0.33; intensity: 2"
+	    glitch="false"> -->
+	<a-scene 
+		renderer="logarithmicDepthBuffer: true;"
+		scene_generate
+	    antialias="false"
+	    effects="bloom, fxaa"
+	    film="sIntensity: 0.03; nIntensity: 0.2" 
+	    outline="enabled: false; width: 1.33 1.33; range: 0 10; strength: 3; smooth: true;" 
+	    colors="mode:hqprtom; mul: 0.66 0.5 0.66; pow: 1 1.33 1.66; quant: 0.3 0.3 0.1; orig: 0.33 0.66 0.66"
+	    bloom="strength: 0.7; radius:1.5"
+	    godrays="src: #sun; threshold: 0. 0.33; intensity: 2"
+	    fxaa="true"
+	    glitch="false">
+		<!-- <a-assets>
+			<a-asset-item id="roomModel" src="./resources/astro/AstroTimeSquare.gltf"></a-asset-item>
+		</a-assets>
+		<a-entity gltf-model="#roomModel"></a-entity> -->
+		<a-gltf-model src="./resources/astro/AstroTimeSquare.gltf"></a-gltf-model>
+
+		<a-sky id="sky" color="#0a0912"></a-sky>
+		<a-entity id="ambient" light="type: ambient; color: #EEE; intensity: 1.2;"></a-entity>
+		<!-- <a-entity id="sun" light="type: directional; castShadow: true; shadowBias: -0.001; shadowCameraFar: 100; shadowRadius: 1; shadowCameraTop: 10; shadowCameraRight: 10; shadowCameraBottom: -10; shadowCameraLeft: -10; color: #31363a;" position="-8 2.15 -4" rotation="0 0 0" target="#directionaltarget" update-shadowmap-on-change-prop update-shadowmap-when-loaded></a-entity> -->
+		<a-entity id="directionaltarget" position="0 0 0" visible="false"></a-entity>
+
+		<a-entity id="rig" movement-controls="constrainToNavMesh: false; speed: 1">
+			<a-camera id="mainCamera" far="700" near="1" position="3 3 5" look-controls="pointerLockEnabled: true">
+				<a-cursor position="0 0 -0.1" scale="0.1 0.1 0.1" raycaster="objects: .gaze-listener"></a-cursor>
+				<!-- <a-entity position="-0.2 -0.2 -0.2" laser-controls="hand: left" raycaster="objects: .laser-listener; showLine: true; far: 2" line="color: red; opacity: 0.75" ex-keyboard-controls="enabled: false"></a-entity> -->
+			</a-camera>
+			<!-- <a-entity hand-controls="hand: left" ex-keyboard-controls="enabled: false" control-laser-by-keyboard></a-entity> -->
+		</a-entity>
+	</a-scene>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+	"default":{
+		"name": "",
+		"description": "",
+		"list-light-query": [],
+		"list-object-query": [],
+		"img": "resources/img/lightbulb.jpg",
+		"power":{
+			"min":{
+				"value": 0.0,
+				"config-intensity-all": 0.0,
+				"config-emissive-intensity-all": 0.0
+			},
+			"max":{
+				"value": 1.0,
+				"config-intensity-all": 1.0,
+				"config-emissive-intensity-all": 1.0
+			}
+		},
+		"color":{
+			"use-temperature": true,
+			"use-rgb": true,
+			"allow-select-rgb": false,
+			"temperature":{
+				"min":{
+					"value": 2000,
+					"config-temperature-all": 2000,
+					"config-emissive-color-all": 2000
+				},
+				"max":{
+					"value": 6000,
+					"config-intensity-all": 6000,
+					"config-emissive-color-all": 6000
+				}
+			},
+			"list-rgb": []
+		}			
+	},
+	"config":[]
+}

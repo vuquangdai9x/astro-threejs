@@ -1,0 +1,174 @@
+{
+    "default-light":{
+        "name":"",
+        "description":"",
+        "allow_config_manually":false,
+        "list-light-query":[
+            
+        ],
+        "list-object-query":[
+            
+        ],
+        "img":"resources/img/lightbulb.jpg",
+        "power":{
+            "min":{
+                "value":0.0,
+                "config-intensity-all":0.0,
+                "config-emissive-intensity-all":0.0
+            },
+            "max":{
+                "value":1.0,
+                "config-intensity-all":1.0,
+                "config-emissive-intensity-all":1.0
+            }
+        },
+        "color":{
+            "use-temperature":true,
+            "use-rgb":true,
+            "allow-select-rgb":false,
+            "temperature":{
+                "min":{
+                    "value":2000,
+                    "config-temperature-all":2000,
+                    "config-emissive-temperature-all":2000
+                },
+                "max":{
+                    "value":6000,
+                    "config-temperature-all":6000,
+                    "config-emissive-temperature-all":6000
+                }
+            },
+            "list-rgb":[
+                
+            ]
+        }
+    },
+    "lights":[
+        {
+            "name":"Đèn LED âm trần",
+            "description":"Lorem ipsum...",
+            "img":"resources/img/compact-ut4-11w.jpg",
+            "allow_config_manually":true,
+            "list-light-query":[
+                "#flat-ceil-led-direct", "#flat-ceil-led-reflect"
+            ],
+            "list-object-query":[
+                "#flatCeilLEDObj"
+            ],
+            "power":{
+                "min":{
+                    "value":0.2,
+                    "config-intensity-all":0.1,
+                    "config-intensity":[0.2, 0.1],
+                    "config-emissive-intensity-all":0.2
+                },
+                "max":{
+                    "value":1.0,
+                    "config-intensity-all":1.0,
+                    "config-intensity":[0.8, 0.4],
+                    "config-emissive-intensity-all":1.0
+                }
+            },
+            "color":{
+                "use-temperature":true,
+                "use-rgb":false,
+                "allow-select-rgb":false
+            }
+        },
+        {
+            "name":"Đèn LED Tròn",
+            "description":"Lorem ipsum...",
+            "allow_config_manually":true,
+            "color":{
+                "use-temperature":false,
+                "use-rgb":true,
+                "allow-select-rgb":false,
+                "list-rgb":[
+                    "#ffffff",
+                    "#ff0000",
+                    "#00ff00",
+                    "#0000ff",
+                    "#ff00ff",
+                    "#ffff00",
+                    "#00ffff"
+                ]
+            }
+        },
+        {
+            "name":"Sun Light",
+            "list-light-query":[
+                "#sunLight"
+            ],
+            "power":null,
+            "color":null
+        },
+        {
+            "name":"Ambient Light",
+            "list-light-query":[
+                "#ambientLight"
+            ],
+            "power":{
+                "min":{
+                    "value":0.0,
+                    "config-intensity-all":0.0
+                },
+                "max":{
+                    "value":1.0,
+                    "config-intensity-all":0.4
+                }
+            },
+            "color":null
+        },
+        {
+            "name":"Light at door",
+            "list-light-query":[
+                "#light-at-door"
+            ],
+            "power":{
+                "min":{
+                    "value":0.0,
+                    "config-intensity-all":0.0
+                },
+                "max":{
+                    "value":1.0,
+                    "config-intensity-all":0.4
+                }
+            },
+            "color":null
+        },
+        {
+            "name":"Light at window 1",
+            "list-light-query":[
+                "#light-at-window-1"
+            ],
+            "power":{
+                "min":{
+                    "value":0.0,
+                    "config-intensity-all":0.0
+                },
+                "max":{
+                    "value":1.0,
+                    "config-intensity-all":0.4
+                }
+            },
+            "color":null
+        },
+        {
+            "name":"Light at window 2",
+            "list-light-query":[
+                "#light-at-window-2"
+            ],
+            "power":{
+                "min":{
+                    "value":0.0,
+                    "config-intensity-all":0.0
+                },
+                "max":{
+                    "value":1.0,
+                    "config-intensity-all":0.4
+                }
+            },
+            "color":null
+        }
+    ]
+}

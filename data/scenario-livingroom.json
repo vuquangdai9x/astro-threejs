@@ -1,0 +1,100 @@
+{
+    "default-scenario":{
+        "name":"",
+        "description":"",
+        "img":"resources/img/406601-PD6D9A-569.jpg",
+        "time":-1,
+        "lights":[
+            
+        ],
+        "natural-lights":[
+            
+        ],
+        "other-objects":[
+            
+        ]
+    },
+    "scenarios":[
+        {
+            "name":"Mặc định",
+            "description":"Trạng thái ban đầu của căn phòng"
+        },
+        {
+            "name":"Tiếp khách",
+            "description":"Lorem ipsum...",
+            "time":8000,
+            "img":"resources/img/conference-room-768441_640.jpg",
+            "lights":[
+                {
+                    "index":0,
+                    "turnOn":true,
+                    "power":1.0,
+                    "color":{
+                        "color-mode":"rgb-preset",
+                        "temperature":6000,
+                        "rgb-preset-index":0,
+                        "rgb":"#ffffff"
+                    }
+                },
+                {
+                    "index":2,
+                    "power":1.0,
+                    "color":{
+                        "color-mode":"rgb",
+                        "temperature":6000,
+                        "rgb":"#ffffff"
+                    }
+                },
+                {
+                    "index":3,
+                    "power":1.0,
+                    "color":{
+                        "color-mode":"rgb",
+                        "temperature":6000,
+                        "rgb":"#ffffff"
+                    }
+                }
+            ],
+            "other-objects":[
+                {
+                    "query":"#window1",
+                    "visible":false,
+                    "position":{
+                        "x":1,
+                        "y":1,
+                        "z":1
+                    },
+                    "rotation":{
+                        "x":0,
+                        "y":0,
+                        "z":0
+                    },
+                    "scale":{
+                        "x":1,
+                        "y":1,
+                        "z":1
+                    }
+                }
+            ]
+        },
+        {
+            "name":"Họp",
+            "description":"Lorem ipsum...",
+            "img":"resources/img/men-1979261_640.jpg",
+            "time":17000,
+            "lights":[
+                {
+                    "index":1,
+                    "turnOn":true,
+                    "power":0.5,
+                    "color":{
+                        "color-mode":"rgb-preset",
+                        "temperature":2000,
+                        "rgb-preset-index":0,
+                        "rgb":"#ffffff"
+                    }
+                }
+            ]
+        }
+    ]
+}

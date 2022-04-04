@@ -59,11 +59,11 @@
 	    godrays="src: #sun; threshold: 0. 0.33; intensity: 2"
 	    fxaa="true"
 	    glitch="false">
-		<!-- <a-assets>
-			<a-asset-item id="roomModel" src="./resources/astro/AstroTimeSquare.gltf"></a-asset-item>
+		<a-assets>
+			<a-asset-item id="roomModel" src="./resources/astro/AstroTimeSquare.gltf" response-type="arraybuffer"></a-asset-item>
 		</a-assets>
-		<a-entity gltf-model="#roomModel"></a-entity> -->
-		<a-gltf-model src="./resources/astro/AstroTimeSquare.gltf"></a-gltf-model>
+		<a-entity gltf-model="#roomModel"></a-entity>
+		<!-- <a-gltf-model src="./resources/astro/AstroTimeSquare.gltf"></a-gltf-model> -->
 
 		<a-sky id="sky" color="#0a0912"></a-sky>
 		<a-entity id="ambient" light="type: ambient; color: #EEE; intensity: 1.2;"></a-entity>

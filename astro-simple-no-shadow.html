@@ -50,11 +50,11 @@
 	<!-- <a-scene fog="type: exponential" scene_generate stats> -->
 	<a-scene 
 		renderer="logarithmicDepthBuffer: true;" fog="type: exponential" scene_generate>
-		<!-- <a-assets>
-			<a-asset-item id="roomModel" src="./resources/astro/AstroTimeSquare.gltf"></a-asset-item>
+		<a-assets>
+			<a-asset-item id="roomModel" src="./resources/astro/AstroTimeSquare.gltf" response-type="arraybuffer"></a-asset-item>
 		</a-assets>
-		<a-entity gltf-model="#roomModel"></a-entity> -->
-		<a-gltf-model src="./resources/astro/AstroTimeSquare.gltf"></a-gltf-model>
+		<a-entity gltf-model="#roomModel"></a-entity>
+		<!-- <a-gltf-model src="./resources/astro/AstroTimeSquare.gltf"></a-gltf-model> -->
 		<a-sky id="sky" color="#0a0912"></a-sky>
 		<a-entity light="type: ambient; color: #DDD"></a-entity>
 		<a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
